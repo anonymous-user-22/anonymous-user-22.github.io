@@ -61,7 +61,7 @@
         position:relative;
     }
     .showdiff{
-        padding-top:90px;
+        padding-top:30px;
     }
     .accordion{
         margin-top: 0.5rem;
@@ -157,7 +157,7 @@
 <div class="container">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-    <span class="fs-4" id="pagetitle">재미삼아만들어본_2022지방선거</span>
+    <span class="fs-4" id="pagetitle">재미삼아만들어본_2022지방선거 (확률은 참고용으로만 ㅎㅎ)</span>
     </a>
     <!--
     <ul class="nav nav-pills">
@@ -198,21 +198,25 @@
             
             $(() => {
             // Step 1: Basic Informations
-            $.get("/targets.txt", (data) => {
+            $.get("/final_targets.txt", (data) => {
                 const mainFrame = $("#main");
                 x = data.split('\n');
                 uids = [];
+                lefts = [];
+                probs = [];
                 //document.writeln(x.length);
 
                 for(var i=0;i<17;i++){
                     tokens = x[i].trim().split(' ');
                     if(tokens[1] != target_location) continue;
                     uids.push(tokens[1]);
+                    lefts.push(tokens[6]);
+                    probs.push(tokens[7]);
                     mainFrame.append(`
                     <div class="accordion">
                         <div class="accordion-item">
-                            <h2 class="accordion-header"><button class="accordion-button" id="${tokens[1]}-header" type="button" data-bs-toggle="collapse" data-bs-target="#${tokens[1]}">
-                                ${tokens[0]} <!--<span class="badge badge-light-ppp">확실</span>-->
+                            <h2 class="accordion-header"><button class="accordion-button" id="${tokens[1]}-header" onClick="location.href='/details.html?where=${tokens[1]}'"  type="button" data-bs-toggle="collapse" data-bs-target="#${tokens[1]}">
+                                ${tokens[0]}
                             </button>
                             </h2>
                             <div class="accordion-body row collapse show" id="${tokens[1]}">
@@ -223,17 +227,17 @@
                                                 <img id="${tokens[1]}-img-1" src="" class="rounded img-thumbnail" style="max-height:150px;max-width:100%;">
                                             </div>
                                             <div style="width:auto;">
-                                                <h5 class="dmj">민주</h5><h2 class="dmj" id="${tokens[1]}-name-1"></h2><h2 class="dmj" id="${tokens[1]}-prob-1">0.0%</h2>
+                                                <h5 class="dmj">민주</h5><h2 class="dmj" id="${tokens[1]}-name-1"></h2><h2 class="dmj" id="${tokens[1]}-prob-1">0.0%</h2><h6 class="dmj" style="text-align:left;" id="${tokens[1]}-count-1">0</h6>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-2 showdiff" style="padding-top:calc(150px-1rem);"><h6>표차</h6><h6 id="${tokens[1]}-diff">0</h6></div>
+                                <div class="col-2 showdiff" style="padding-top:calc(150px-1rem);"><h6>표차</h6><h6 id="${tokens[1]}-diff">0</h6><h6>당선까지</h6><h6 id="${tokens[1]}-left">0</h6></div>
                                 <div class="col-5">
                                     <div class="float-end">
                                         <div class="row" style="display:flex;">
                                             <div style="width:auto;">
-                                                <h5 class="ppp">국민</h5><h2 class="ppp" id="${tokens[1]}-name-2"></h2><h2 class="ppp" id="${tokens[1]}-prob-2">0.0%</h2>
+                                                <h5 class="ppp">국민</h5><h2 class="ppp" id="${tokens[1]}-name-2"></h2><h2 class="ppp" id="${tokens[1]}-prob-2">0.0%</h2><h6 class="ppp" style="text-align:right;" id="${tokens[1]}-count-2">0</h6>
                                             </div>
                                             <div style="width:auto;">
                                                 <img id="${tokens[1]}-img-2" src="" class="rounded img-thumbnail" style="max-height:150px;max-width:100%;">
@@ -268,14 +272,16 @@
                                     </div>
                                 </div>
                                 <div class="row div-details">
-                                    <div style="width:200px;"><h4 style="text-align:center;">예측 당선확률</h4><h5 style="text-align:center;">0.0:0.0</h5></div>
+                                    <div style="width:200px;"><h4 style="text-align:center;">예측 당선확률</h4><h5 style="text-align:center;" id="${tokens[1]}-pred">0.0:0.0</h5></div>
                                     <div style="padding:0;width:calc(100% - 200px);">
-                                        <div class="progress progress-small" id="${tokens[1]}-progress">
+                                        <div class="progress progress-small" id="${tokens[1]}-prediction">
                                             <div class="progress-bar bg-dmj" role="progressbar" style="width: 50.0%"></div>
-                                            <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.0%"></div>
+                                            <div class="progress-bar bg-secondary" role="progressbar" style="width: 0%"></div>
                                             <div class="progress-bar bg-ppp" role="progressbar" style="width: 50.0%"></div>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="col-12 div-details" id="${tokens[1]}-details">
                                 </div>
                             </div>
                         </div>
@@ -300,7 +306,6 @@
                     var t_dmj = 0; var t_ppp = 0; var t_all = 0.01;
                     _tokenn = x2[0].trim().split(' ')[4]
                     $("#" + target_location + "-header").text($("#" + target_location + "-header").text() + " - 개표율 " + _tokenn + "%");
-                        
                     for(var j=1;j<x2.length;j++){
                         if(x2[j].length < 3) continue;
                         tokens = x2[j].trim().split(' ');
@@ -310,21 +315,76 @@
                         //console.log(t_dmj, t_all);
                         t_dmj += v_dmj; t_ppp += v_ppp; t_all += v_all;
                         p_dmj = v_dmj / v_all; p_ppp = v_ppp / v_all;
+                        details.push([p_ppp - p_dmj, tokens[0], tokens[4]]);
                     }
                     //console.log(t_dmj, t_all);
                     $("#" + target_location + "-prob-1").text(prettyPercentage(t_dmj / t_all) + "%");
                     $("#" + target_location + "-prob-2").text(prettyPercentage(t_ppp / t_all) + "%");
+                    $("#" + target_location + "-count-1").text(t_dmj+"");
+                    $("#" + target_location + "-count-2").text(t_ppp+"");
+                    
                     $("#" + target_location + "-diff").text(Math.abs(t_ppp - t_dmj));
+                    $("#" + target_location + "-left").text(lefts[0]);
 
                     $("#" + target_location + "-progress .bg-dmj").css('width', prettyPercentage(t_dmj / t_all) + "%");
                     $("#" + target_location + "-progress .bg-secondary").css('width', prettyPercentage((t_all - t_dmj - t_ppp) / t_all) + "%");
                     $("#" + target_location + "-progress .bg-ppp").css('width', prettyPercentage(t_ppp / t_all) + "%");
+                    
                     if(t_dmj > t_ppp){
                         $("#" + target_location + "-header").addClass('bg-dmj');
+                        if(parseInt(lefts[0]) == 0){
+                            $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-dmj">당선</span>`)
+                        }else if(parseFloat(probs[0]) > -1e-6 && parseFloat(probs[0]) < 0.01){
+                            $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-ppp">확실</span>`)
+                        }else if(parseFloat(probs[0]) > -1e-6 && parseFloat(probs[0]) < 0.05){
+                            $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-ppp">유력</span>`)
+                        }else if(parseFloat(probs[0]) > 0.99){
+                            $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-dmj">확실</span>`)
+                        }else if(parseFloat(probs[0]) > 0.95){
+                            $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-dmj">유력</span>`)
+                        }
                     }else if(t_dmj < t_ppp){
                         $("#" + target_location + "-header").addClass('bg-ppp');
+                        if(parseInt(lefts[0]) == 0){
+                            $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-ppp">당선</span>`)
+                        }else if(parseFloat(probs[0]) > -1e-6 && parseFloat(probs[0]) < 0.01){
+                            $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-ppp">확실</span>`)
+                        }else if(parseFloat(probs[0]) > -1e-6 && parseFloat(probs[0]) < 0.05){
+                            $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-ppp">유력</span>`)
+                        }else if(parseFloat(probs[0]) > 0.99){
+                            $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-dmj">확실</span>`)
+                        }else if(parseFloat(probs[0]) > 0.95){
+                            $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-dmj">유력</span>`)
+                        }
                     }else{
                         $("#" + target_location + "-header").addClass('bg-none');
+                    }
+
+                    _sign = 1;
+                    if (t_ppp > t_dmj) _sign = -1;
+                    details = details.sort(function(a, b){
+                        if(a[0] < b[0]) return -1 * _sign;
+                        else if(a[0] > b[0]) return 1 * _sign;
+                        else return 0;
+                    });
+                    if(details.length > 1){
+                        for(var j=0;j<details.length;j++){
+                            if (details[j][0] > 0.1){
+                                $("#" + target_location + "-details").append(`<button type="button" class="btn btn-ppp3 disabled">${details[j][1]} ${prettyPercentage(-details[j][0] * _sign)} (${details[j][2]}%)</button>`)
+                            }else if(details[j][0] > 0.05){
+                                $("#" + target_location + "-details").append(`<button type="button" class="btn btn-ppp2 disabled">${details[j][1]} ${prettyPercentage(-details[j][0] * _sign)} (${details[j][2]}%)</button>`)
+                            }else if(details[j][0] > 0){
+                                $("#" + target_location + "-details").append(`<button type="button" class="btn btn-ppp1 disabled">${details[j][1]} ${prettyPercentage(-details[j][0] * _sign)} (${details[j][2]}%)</button>`)
+                            }else if(details[j][0] < -0.1){
+                                $("#" + target_location + "-details").append(`<button type="button" class="btn btn-dmj3 disabled">${details[j][1]} ${prettyPercentage(-details[j][0] * _sign)} (${details[j][2]}%)</button>`)
+                            }else if(details[j][0] < -0.05){
+                                $("#" + target_location + "-details").append(`<button type="button" class="btn btn-dmj2 disabled">${details[j][1]} ${prettyPercentage(-details[j][0] * _sign)} (${details[j][2]}%)</button>`)
+                            }else if(details[j][0] < 0){
+                                $("#" + target_location + "-details").append(`<button type="button" class="btn btn-dmj1 disabled">${details[j][1]} ${prettyPercentage(-details[j][0] * _sign)} (${details[j][2]}%)</button>`)
+                            }else{
+                                $("#" + target_location + "-details").append(`<button type="button" class="btn btn-0 disabled">${details[j][1]} ${prettyPercentage(-details[j][0] * _sign)} (${details[j][2]}%)</button>`)
+                            }
+                        }
                     }
                 });
                 $.get("/details/all.txt", (data3) => {
@@ -360,6 +420,17 @@
                     $("#" + target_location + "-progress-d2 .bg-dmj").css('width', p2_dmj + "%");
                     $("#" + target_location + "-progress-d2 .bg-secondary").css('width', p2_all + "%");
                     $("#" + target_location + "-progress-d2 .bg-ppp").css('width', p2_ppp + "%");
+
+                    fprob = parseFloat(probs[0]);
+                    if(fprob > -1e-6){
+                        $("#" + target_location + "-prediction .bg-dmj").css('width', prettyPercentage(fprob) + "%");
+                        $("#" + target_location + "-prediction .bg-secondary").css('width', "0%");
+                        $("#" + target_location + "-prediction .bg-ppp").css('width', prettyPercentage(1-fprob) + "%");
+                        $("#" + target_location + "-pred").html(`<span class="dmj">${prettyPercentage(fprob)}</span> : <span class="ppp">${prettyPercentage(1-fprob)}</span>`);
+                    }else{
+                        $("#" + target_location + "-pred").html(`예측 없음`);
+                    }
+                    
                 });
             });
         

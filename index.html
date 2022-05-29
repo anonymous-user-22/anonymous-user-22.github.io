@@ -146,7 +146,7 @@
 <div class="container">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-    <span class="fs-4">재미삼아만들어본_2022지방선거</span>
+    <span class="fs-4">재미삼아만들어본_2022지방선거 (현재는 대선 데이터 사용중입니다 ㅠ)</span>
     </a>
     <!--
     <ul class="nav nav-pills">
@@ -175,20 +175,24 @@
             }
             $(() => {
             // Step 1: Basic Informations
-            $.get("/targets.txt", (data) => {
+            $.get("/final_targets.txt", (data) => {
                 const mainFrame = $("#main");
                 x = data.split('\n');
                 uids = [];
+                lefts = [];
+                probs = [];
                 //document.writeln(x.length);
 
                 for(var i=0;i<17;i++){
                     tokens = x[i].trim().split(' ');
                     uids.push(tokens[1]);
+                    lefts.push(tokens[6]);
+                    probs.push(tokens[7]);
                     mainFrame.append(`
                     <div class="accordion">
                         <div class="accordion-item">
-                            <h2 class="accordion-header"><button class="accordion-button" id="${tokens[1]}-header" type="button" data-bs-toggle="collapse" data-bs-target="#${tokens[1]}">
-                                ${tokens[0]} <!--<span class="badge badge-light-ppp">확실</span>-->
+                            <h2 class="accordion-header"><button class="accordion-button" id="${tokens[1]}-header" type="button" onClick="location.href='/details.html?where=${tokens[1]}'"  data-bs-toggle="collapse" data-bs-target="#${tokens[1]}">
+                                ${tokens[0]}
                             </button>
                             </h2>
                             <div class="accordion-body row collapse show" id="${tokens[1]}">
@@ -199,7 +203,7 @@
                                                 <img id="${tokens[1]}-img-1" src="" class="rounded img-thumbnail" style="max-height:150px;max-width:100%;">
                                             </div>
                                             <div style="width:auto;">
-                                                <h5 class="dmj">민주</h5><h2 class="dmj" id="${tokens[1]}-name-1"></h2><h2 class="dmj" id="${tokens[1]}-prob-1">0.0%</h2>
+                                                <h5 class="dmj">민주</h5><h2 class="dmj" id="${tokens[1]}-name-1"></h2><h2 class="dmj" id="${tokens[1]}-prob-1">0.0%</h2><h6 class="dmj" style="text-align:left;" id="${tokens[1]}-count-1">0</h6>
                                             </div>
                                         </div>
                                     </div>
@@ -209,7 +213,7 @@
                                     <div class="float-end">
                                         <div class="row" style="display:flex;">
                                             <div style="width:auto;">
-                                                <h5 class="ppp">국민</h5><h2 class="ppp" id="${tokens[1]}-name-2"></h2><h2 class="ppp" id="${tokens[1]}-prob-2">0.0%</h2>
+                                                <h5 class="ppp">국민</h5><h2 class="ppp" id="${tokens[1]}-name-2"></h2><h2 class="ppp" id="${tokens[1]}-prob-2">0.0%</h2><h6 class="ppp" style="text-align:right;" id="${tokens[1]}-count-2">0</h6>
                                             </div>
                                             <div style="width:auto;">
                                                 <img id="${tokens[1]}-img-2" src="" class="rounded img-thumbnail" style="max-height:150px;max-width:100%;">
@@ -248,7 +252,7 @@
                         var t_dmj = 0; var t_ppp = 0; var t_all = 0.01;
                         _tokenn = x2[0].trim().split(' ')[4]
                         $("#" + uids[i] + "-header").text($("#" + uids[i] + "-header").text() + " - 개표율 " + _tokenn + "%");
-                        
+                        probs.push(tokens[7]);
                         console.log();
                         for(var j=1;j<x2.length;j++){
                             if(x2[j].length < 3) continue;
@@ -264,14 +268,39 @@
                         //console.log(t_dmj, t_all);
                         $("#" + uids[i] + "-prob-1").text(prettyPercentage(t_dmj / t_all) + "%");
                         $("#" + uids[i] + "-prob-2").text(prettyPercentage(t_ppp / t_all) + "%");
+                        $("#" + uids[i] + "-count-1").text(t_dmj+"");
+                        $("#" + uids[i] + "-count-2").text(t_ppp+"");
+
                         $("#" + uids[i] + "-diff").text(Math.abs(t_ppp - t_dmj));
                         $("#" + uids[i] + "-progress .bg-dmj").css('width', prettyPercentage(t_dmj / t_all) + "%");
                         $("#" + uids[i] + "-progress .bg-secondary").css('width', prettyPercentage((t_all - t_dmj - t_ppp) / t_all) + "%");
                         $("#" + uids[i] + "-progress .bg-ppp").css('width', prettyPercentage(t_ppp / t_all) + "%");
                         if(t_dmj > t_ppp){
                             $("#" + uids[i] + "-header").addClass('bg-dmj');
+                            if(parseInt(lefts[i]) == 0){
+                                $("#" + uids[i] + "-header").html($("#" + uids[i] + "-header").text() + `<span class="badge badge-light-dmj">당선</span>`)
+                            }else if(parseFloat(probs[i]) > 0.99){
+                                $("#" + uids[i] + "-header").html($("#" + uids[i] + "-header").text() + `<span class="badge badge-light-dmj">확실</span>`)
+                            }else if(parseFloat(probs[i]) > 0.95){
+                                $("#" + uids[i] + "-header").html($("#" + uids[i] + "-header").text() + `<span class="badge badge-light-dmj">유력</span>`)
+                            }else if(parseFloat(probs[i]) > -1e-6 && parseFloat(probs[i]) < 0.01){
+                                $("#" + uids[i] + "-header").html($("#" + uids[i] + "-header").text() + `<span class="badge badge-light-ppp">확실</span>`)
+                            }else if(parseFloat(probs[i]) > -1e-6 && parseFloat(probs[i]) < 0.05){
+                                $("#" + uids[i] + "-header").html($("#" + uids[i] + "-header").text() + `<span class="badge badge-light-ppp">유력</span>`)
+                            }
                         }else if(t_dmj < t_ppp){
                             $("#" + uids[i] + "-header").addClass('bg-ppp');
+                            if(parseInt(lefts[i]) == 0){
+                                $("#" + uids[i] + "-header").html($("#" + uids[i] + "-header").text() + `<span class="badge badge-light-ppp">당선</span>`)
+                            }else if(parseFloat(probs[i]) > -1e-6 && parseFloat(probs[i]) < 0.01){
+                                $("#" + uids[i] + "-header").html($("#" + uids[i] + "-header").text() + `<span class="badge badge-light-ppp">확실</span>`)
+                            }else if(parseFloat(probs[i]) > -1e-6 && parseFloat(probs[i]) < 0.05){
+                                $("#" + uids[i] + "-header").html($("#" + uids[i] + "-header").text() + `<span class="badge badge-light-ppp">유력</span>`)
+                            }else if(parseFloat(probs[i]) > 0.99){
+                                $("#" + uids[i] + "-header").html($("#" + uids[i] + "-header").text() + `<span class="badge badge-light-dmj">확실</span>`)
+                            }else if(parseFloat(probs[i]) > 0.95){
+                                $("#" + uids[i] + "-header").html($("#" + uids[i] + "-header").text() + `<span class="badge badge-light-dmj">유력</span>`)
+                            }
                         }else{
                             $("#" + uids[i] + "-header").addClass('bg-none');
                         }
