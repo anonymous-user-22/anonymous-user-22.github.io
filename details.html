@@ -51,7 +51,16 @@
         width: calc(100% - var(--bs-gutter-x));
         --bs-progress-height: 1.3rem;
     }
-    .col-2{
+    .progress.progress-small{
+        margin:0;
+        padding-left: unset;
+        padding-right: unset;
+        width: calc(100%);
+        top:25%;
+        --bs-progress-height: 1.3rem;
+        position:relative;
+    }
+    .showdiff{
         padding-top:90px;
     }
     .accordion{
@@ -76,7 +85,9 @@
         padding-bottom:0.25em;
     }
     .div-details{
-        padding-top: 7px;
+        padding-top: 12px;
+        padding-left: 0px;
+        padding-right: 0px;
     }
 
     .btn-ppp3 {
@@ -146,7 +157,7 @@
 <div class="container">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-    <span class="fs-4">재미삼아만들어본_2022지방선거</span>
+    <span class="fs-4" id="pagetitle">재미삼아만들어본_2022지방선거</span>
     </a>
     <!--
     <ul class="nav nav-pills">
@@ -173,6 +184,18 @@
                     return "-" + Math.floor(p / 10) + "." + (p%10);
                 }
             }
+            function getParameterByName(name) {
+                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                    results = regex.exec(location.search);
+                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
+            var target_location = getParameterByName('where').trim();
+            if (target_location.length < 2){
+                location.replace('/details.html?where=seoul');
+            }else{
+            console.log(target_location);
+            
             $(() => {
             // Step 1: Basic Informations
             $.get("/targets.txt", (data) => {
@@ -183,6 +206,7 @@
 
                 for(var i=0;i<17;i++){
                     tokens = x[i].trim().split(' ');
+                    if(tokens[1] != target_location) continue;
                     uids.push(tokens[1]);
                     mainFrame.append(`
                     <div class="accordion">
@@ -204,7 +228,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-2" style="padding-top:calc(150px-1rem);"><h6>표차</h6><h6 id="${tokens[1]}-diff">0</h6></div>
+                                <div class="col-2 showdiff" style="padding-top:calc(150px-1rem);"><h6>표차</h6><h6 id="${tokens[1]}-diff">0</h6></div>
                                 <div class="col-5">
                                     <div class="float-end">
                                         <div class="row" style="display:flex;">
@@ -222,7 +246,36 @@
                                     <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.0%"></div>
                                     <div class="progress-bar bg-ppp" role="progressbar" style="width: 50.0%"></div>
                                 </div>
-                                <div class="col-12 div-details" id="${tokens[1]}-details">
+                                <div style="height:20px;"></div>
+                                <div class="row div-details">
+                                    <div style="width:200px;"><h4 style="text-align:center;">사전투표</h4><h5 style="text-align:center;" id="${tokens[1]}-probd1"></h5></div>
+                                    <div style="padding:0;width:calc(100% - 200px);">
+                                        <div class="progress progress-small" id="${tokens[1]}-progress-d1">
+                                            <div class="progress-bar bg-dmj" role="progressbar" style="width: 50.0%"></div>
+                                            <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.0%"></div>
+                                            <div class="progress-bar bg-ppp" role="progressbar" style="width: 50.0%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row div-details">
+                                    <div style="width:200px;"><h4 style="text-align:center;">본투표</h4><h5 style="text-align:center;" id="${tokens[1]}-probd2"></h5></div>
+                                    <div style="padding:0;width:calc(100% - 200px);">
+                                        <div class="progress progress-small" id="${tokens[1]}-progress-d2">
+                                            <div class="progress-bar bg-dmj" role="progressbar" style="width: 50.0%"></div>
+                                            <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.0%"></div>
+                                            <div class="progress-bar bg-ppp" role="progressbar" style="width: 50.0%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row div-details">
+                                    <div style="width:200px;"><h4 style="text-align:center;">예측 당선확률</h4><h5 style="text-align:center;">0.0:0.0</h5></div>
+                                    <div style="padding:0;width:calc(100% - 200px);">
+                                        <div class="progress progress-small" id="${tokens[1]}-progress">
+                                            <div class="progress-bar bg-dmj" role="progressbar" style="width: 50.0%"></div>
+                                            <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.0%"></div>
+                                            <div class="progress-bar bg-ppp" role="progressbar" style="width: 50.0%"></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -241,72 +294,77 @@
                 <button type="button" class="btn btn-ppp2 disabled">성남시중원구</button>
                 <button type="button" class="btn btn-ppp3 disabled">제주시을</button>
                 */
-                for(var i=0;i<17;i++){
-                    $.get("/details/" + uids[i] + ".txt", (data2) => {
-                        x2 = data2.split('\n');
-                        details = [];
-                        var t_dmj = 0; var t_ppp = 0; var t_all = 0.01;
-                        _tokenn = x2[0].trim().split(' ')[4]
-                        $("#" + uids[i] + "-header").text($("#" + uids[i] + "-header").text() + " - 개표율 " + _tokenn + "%");
+                $.get("/details/" + target_location + ".txt", (data2) => {
+                    x2 = data2.split('\n');
+                    details = [];
+                    var t_dmj = 0; var t_ppp = 0; var t_all = 0.01;
+                    _tokenn = x2[0].trim().split(' ')[4]
+                    $("#" + target_location + "-header").text($("#" + target_location + "-header").text() + " - 개표율 " + _tokenn + "%");
                         
-                        console.log();
-                        for(var j=1;j<x2.length;j++){
-                            if(x2[j].length < 3) continue;
-                            tokens = x2[j].trim().split(' ');
-                            v_dmj = parseInt(tokens[1]);
-                            v_ppp = parseInt(tokens[2]);
-                            v_all = parseInt(tokens[3]);
-                            //console.log(t_dmj, t_all);
-                            t_dmj += v_dmj; t_ppp += v_ppp; t_all += v_all;
-                            p_dmj = v_dmj / v_all; p_ppp = v_ppp / v_all;
-                            details.push([p_ppp - p_dmj, tokens[0]]);
-                        }
+                    for(var j=1;j<x2.length;j++){
+                        if(x2[j].length < 3) continue;
+                        tokens = x2[j].trim().split(' ');
+                        v_dmj = parseInt(tokens[1]);
+                        v_ppp = parseInt(tokens[2]);
+                        v_all = parseInt(tokens[3]);
                         //console.log(t_dmj, t_all);
-                        $("#" + uids[i] + "-prob-1").text(prettyPercentage(t_dmj / t_all) + "%");
-                        $("#" + uids[i] + "-prob-2").text(prettyPercentage(t_ppp / t_all) + "%");
-                        $("#" + uids[i] + "-diff").text(Math.abs(t_ppp - t_dmj));
-                        $("#" + uids[i] + "-progress .bg-dmj").css('width', prettyPercentage(t_dmj / t_all) + "%");
-                        $("#" + uids[i] + "-progress .bg-secondary").css('width', prettyPercentage((t_all - t_dmj - t_ppp) / t_all) + "%");
-                        $("#" + uids[i] + "-progress .bg-ppp").css('width', prettyPercentage(t_ppp / t_all) + "%");
-                        if(t_dmj > t_ppp){
-                            $("#" + uids[i] + "-header").addClass('bg-dmj');
-                        }else if(t_dmj < t_ppp){
-                            $("#" + uids[i] + "-header").addClass('bg-ppp');
-                        }else{
-                            $("#" + uids[i] + "-header").addClass('bg-none');
+                        t_dmj += v_dmj; t_ppp += v_ppp; t_all += v_all;
+                        p_dmj = v_dmj / v_all; p_ppp = v_ppp / v_all;
+                    }
+                    //console.log(t_dmj, t_all);
+                    $("#" + target_location + "-prob-1").text(prettyPercentage(t_dmj / t_all) + "%");
+                    $("#" + target_location + "-prob-2").text(prettyPercentage(t_ppp / t_all) + "%");
+                    $("#" + target_location + "-diff").text(Math.abs(t_ppp - t_dmj));
+
+                    $("#" + target_location + "-progress .bg-dmj").css('width', prettyPercentage(t_dmj / t_all) + "%");
+                    $("#" + target_location + "-progress .bg-secondary").css('width', prettyPercentage((t_all - t_dmj - t_ppp) / t_all) + "%");
+                    $("#" + target_location + "-progress .bg-ppp").css('width', prettyPercentage(t_ppp / t_all) + "%");
+                    if(t_dmj > t_ppp){
+                        $("#" + target_location + "-header").addClass('bg-dmj');
+                    }else if(t_dmj < t_ppp){
+                        $("#" + target_location + "-header").addClass('bg-ppp');
+                    }else{
+                        $("#" + target_location + "-header").addClass('bg-none');
+                    }
+                });
+                $.get("/details/all.txt", (data3) => {
+                    x = data3.split('\n');
+                    var t1_dmj = 0, t1_ppp = 0, t1_all = 0.001, t2_dmj = 0, t2_ppp = 0, t2_all = 0.001;
+                    for(var j=0;j<x.length;j++){
+                        tokens = x[j].trim().split(' ');
+                        if(tokens[0] == target_location){
+                            //console.log(tokens);
+                            t1_dmj += parseInt(tokens[2]);
+                            t1_ppp += parseInt(tokens[3]);
+                            t1_all += parseInt(tokens[4]);
+                            t2_dmj += parseInt(tokens[6]);
+                            t2_ppp += parseInt(tokens[7]);
+                            t2_all += parseInt(tokens[8]);
                         }
-                        _sign = 1;
-                        if (t_ppp > t_dmj) _sign = -1;
-                        details = details.sort(function(a, b){
-                            if(a[0] < b[0]) return -1 * _sign;
-                            else if(a[0] > b[0]) return 1 * _sign;
-                            else return 0;
-                        });
-                        if(details.length > 1){
-                            for(var j=0;j<details.length;j++){
-                                if (details[j][0] > 0.1){
-                                    $("#" + uids[i] + "-details").append(`<button type="button" class="btn btn-ppp3 disabled">${details[j][1]} ${prettyPercentage(-details[j][0] * _sign)}</button>`)
-                                }else if(details[j][0] > 0.05){
-                                    $("#" + uids[i] + "-details").append(`<button type="button" class="btn btn-ppp2 disabled">${details[j][1]} ${prettyPercentage(-details[j][0] * _sign)}</button>`)
-                                }else if(details[j][0] > 0){
-                                    $("#" + uids[i] + "-details").append(`<button type="button" class="btn btn-ppp1 disabled">${details[j][1]} ${prettyPercentage(-details[j][0] * _sign)}</button>`)
-                                }else if(details[j][0] < -0.1){
-                                    $("#" + uids[i] + "-details").append(`<button type="button" class="btn btn-dmj3 disabled">${details[j][1]} ${prettyPercentage(-details[j][0] * _sign)}</button>`)
-                                }else if(details[j][0] < -0.05){
-                                    $("#" + uids[i] + "-details").append(`<button type="button" class="btn btn-dmj2 disabled">${details[j][1]} ${prettyPercentage(-details[j][0] * _sign)}</button>`)
-                                }else if(details[j][0] < 0){
-                                    $("#" + uids[i] + "-details").append(`<button type="button" class="btn btn-dmj1 disabled">${details[j][1]} ${prettyPercentage(-details[j][0] * _sign)}</button>`)
-                                }else{
-                                    $("#" + uids[i] + "-details").append(`<button type="button" class="btn btn-0 disabled">${details[j][1]} ${prettyPercentage(-details[j][0] * _sign)}</button>`)
-                                }
-                            }
-                        }
-                    });
-                }
+                    }
+                    console.log(t1_dmj, t1_ppp, t1_all, t2_dmj, t2_ppp, t2_all);
+                    p1_dmj = prettyPercentage(t1_dmj / t1_all);
+                    p1_ppp = prettyPercentage(t1_ppp / t1_all);
+                    p1_all = prettyPercentage((t1_all - t1_dmj - t1_ppp) / t1_all);
+                    p2_dmj = prettyPercentage(t2_dmj / t2_all);
+                    p2_ppp = prettyPercentage(t2_ppp / t2_all);
+                    p2_all = prettyPercentage((t2_all - t2_dmj - t2_ppp) / t2_all);
+                    
+                    console.log("#" + target_location + "-probd1", p1_dmj + ":" + p1_ppp)
+                    $("#" + target_location + "-probd1").html(`<span class="dmj">${p1_dmj}</span> : <span class="ppp">${p1_ppp}</span>`);
+                    $("#" + target_location + "-probd2").html(`<span class="dmj">${p2_dmj}</span> : <span class="ppp">${p2_ppp}</span>`);
+                    
+                    $("#" + target_location + "-progress-d1 .bg-dmj").css('width', p1_dmj + "%");
+                    $("#" + target_location + "-progress-d1 .bg-secondary").css('width', p1_all + "%");
+                    $("#" + target_location + "-progress-d1 .bg-ppp").css('width', p1_ppp + "%");
+                    $("#" + target_location + "-progress-d2 .bg-dmj").css('width', p2_dmj + "%");
+                    $("#" + target_location + "-progress-d2 .bg-secondary").css('width', p2_all + "%");
+                    $("#" + target_location + "-progress-d2 .bg-ppp").css('width', p2_ppp + "%");
+                });
             });
         
-        
             });
+        }
         </script>        
     </body>
 </html>
