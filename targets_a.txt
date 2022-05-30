@@ -1,0 +1,5 @@
+서울_종로 seoul_jongro http://info.nec.go.kr/photo_20220309/Gsg1101/Hb100138535/gicho/thumbnail.100138535.JPG http://info.nec.go.kr/photo_20220309/Gsg1101/Hb100138425/gicho/thumbnail.100138425.JPG 최재형 배복주
+서울_서초갑 seoul_seochogap http://info.nec.go.kr/photo_20220309/Gsg1122/Hb100138532/gicho/thumbnail.100138532.JPG http://info.nec.go.kr/photo_20220309/Gsg1122/Hb100138465/gicho/thumbnail.100138465.JPG 이정근 조은희
+대구_중남 daegu_jungnam http://info.nec.go.kr/photo_20220309/Gsg2704/Hb100138440/gicho/thumbnail.100138440.JPG http://info.nec.go.kr/photo_20220309/Gsg2704/Hb100138441/gicho/thumbnail.100138441.JPG 백수범 권영현
+경기_안성 gyeonggi_anseong http://info.nec.go.kr/photo_20220309/Gsg4138/Hb100138406/gicho/thumbnail.100138406.JPG http://info.nec.go.kr/photo_20220309/Gsg4138/Hb100138420/gicho/thumbnail.100138420.JPG 김학용 이주현
+충북_청주상당 chungbuk_cheongjusangdang http://info.nec.go.kr/photo_20220309/Gsg4301/Hb100138405/gicho/thumbnail.100138405.JPG http://info.nec.go.kr/photo_20220309/Gsg4301/Hb100138539/gicho/thumbnail.100138539.JPG 정우택 김시진

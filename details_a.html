@@ -1,0 +1,407 @@
+<html>
+    <meta charset="utf-8">
+    <head>
+        <title>Toy Project: ELECTION0601</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <style type="text/css">
+    @font-face {
+        font-family: 'SBAggroB';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    body {
+        font-family:'SBAggroB';
+        font-size:10pt;
+    }
+    .dmj {
+        color: #0042A1;
+    }
+    .ppp {
+        color:#E61E2B;
+        text-align:right;
+    }
+    h6{
+        text-align:center;
+    }
+    .accordion-button{
+        color:#FFFFFF!important;
+    }
+    .accordion-button::after{
+        background-image:var(--bs-accordion-btn-icon)!important;
+    }
+    .bg-dmj{
+        background-color:#0042A1!important;
+    }
+    .bg-ppp{
+        background-color:#E61E2B!important;
+    }
+    .bg-none{
+        background-color:#999!important;
+    }
+    .progress.col-12{
+        margin-left: calc(var(--bs-gutter-x) * .5);
+        margin-right: calc(var(--bs-gutter-x) * .5);
+        margin-top: 0.5rem;
+        padding-left: unset;
+        padding-right: unset;
+        width: calc(100% - var(--bs-gutter-x));
+        --bs-progress-height: 1.3rem;
+    }
+    .progress.progress-small{
+        margin:0;
+        padding-left: unset;
+        padding-right: unset;
+        width: calc(100%);
+        top:25%;
+        --bs-progress-height: 1.3rem;
+        position:relative;
+    }
+    .showdiff{
+        padding-top:30px;
+    }
+    .accordion{
+        margin-top: 0.5rem;
+    }
+    .badge-light-ppp{
+        margin-left: 10px;
+        background-color:#FFFFFF!important;
+        color:#E61E2B!important;
+        font-size:medium;
+        padding-left:0.45em;
+        padding-right:0.45em;
+        padding-bottom:0.25em;
+    }
+    .badge-light-dmj{
+        margin-left: 10px;
+        background-color:#FFFFFF!important;
+        color:#0042A1!important;
+        font-size:medium;
+        padding-left:0.45em;
+        padding-right:0.45em;
+        padding-bottom:0.25em;
+    }
+    .div-details{
+        padding-top: 12px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .btn-ppp3 {
+        margin-right: 5px;
+        --bs-btn-border-radius: 100rem;
+        --bs-btn-disabled-color: #fff;
+        --bs-btn-disabled-bg: #E61E2B;
+        --bs-btn-disabled-border-color: #E61E2B;
+        --bs-btn-disabled-opacity: 1;
+    }
+    .btn-ppp1 {
+        margin-right: 5px;
+        --bs-btn-border-radius: 100rem;
+        --bs-btn-disabled-color: #fff;
+        --bs-btn-disabled-bg: #F38F95;
+        --bs-btn-disabled-border-color: #F38F95;
+        --bs-btn-disabled-opacity: 1;
+    }
+    .btn-ppp2 {
+        margin-right: 5px;
+        --bs-btn-border-radius: 100rem;
+        --bs-btn-disabled-color: #fff;
+        --bs-btn-disabled-bg: #EC5760;
+        --bs-btn-disabled-border-color: #EC5760;
+    }
+    .btn-0 {
+        margin-right: 5px;
+        --bs-btn-border-radius: 100rem;
+        --bs-btn-disabled-opacity: 1;
+        --bs-btn-disabled-color: #999;
+        --bs-btn-disabled-bg: #FFFFFF;
+        --bs-btn-disabled-border-color: #999;
+    }
+    .btn {
+        margin-right: 5px;
+        margin-top: 3px;
+        margin-bottom: 3px;
+        --bs-btn-border-radius: 100rem;
+        --bs-btn-disabled-opacity: 1;
+    }
+    .btn-dmj1 {
+        margin-right: 5px;
+        --bs-btn-border-radius: 100rem;
+        --bs-btn-disabled-color: #fff;
+        --bs-btn-disabled-bg: #80A1D0;
+        --bs-btn-disabled-border-color: #80A1D0;
+        --bs-btn-disabled-opacity: 1;
+    }
+    .btn-dmj2 {
+        margin-right: 5px;
+        --bs-btn-border-radius: 100rem;
+        --bs-btn-disabled-color: #fff;
+        --bs-btn-disabled-bg: #4071B8;
+        --bs-btn-disabled-border-color: #4071B8;
+        --bs-btn-disabled-opacity: 1;
+    }
+    .btn-dmj3 {
+        margin-right: 5px;
+        --bs-btn-border-radius: 100rem;
+        --bs-btn-disabled-color: #fff;
+        --bs-btn-disabled-bg: #0042A1;
+        --bs-btn-disabled-border-color: #0042A1;
+        --bs-btn-disabled-opacity: 1;
+    }
+    </style>
+    <body>
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+    <span class="fs-4" id="pagetitle">확률은 참고용으로만 ㅎㅎ</span>
+    </a>
+    <ul class="nav nav-pills">
+    <li class="nav-item"><a href="/index.html" class="nav-link" aria-current="page">시도지사선거</a></li>
+    <li class="nav-item"><a href="/assembly.html" class="nav-link active">국회의원</a></li>
+    </ul>
+    </header>
+</div>
+
+        <div class="container" id="main">
+        </div>
+        <script>
+            jQuery.ajaxSetup({async:false});
+            const prettyPercentage = function (a) {
+                if(a >= 0){
+                    p = Math.round(a * 1000);
+                    return Math.floor(p / 10) + "." + (p%10);
+                }else{
+                    p = Math.round((-a) * 1000);
+                    return "-" + Math.floor(p / 10) + "." + (p%10);
+                }
+            }
+            function getParameterByName(name) {
+                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                    results = regex.exec(location.search);
+                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
+            var target_location = getParameterByName('where').trim();
+            if (target_location.length < 2){
+                location.replace('/details.html?where=seoul');
+            }else{
+            console.log(target_location);
+            
+            $(() => {
+            // Step 1: Basic Informations
+            $.get("/final_targets_a.txt", (data) => {
+                const mainFrame = $("#main");
+                x = data.split('\n');
+                uids = [];
+                lefts = [];
+                probs = [];
+                //document.writeln(x.length);
+
+                for(var i=0;i<x.length;i++){
+                    tokens = x[i].trim().split(' ');
+                    if(tokens[1] != target_location) continue;
+                    uids.push(tokens[1]);
+                    lefts.push(tokens[6]);
+                    probs.push(tokens[7]);
+                    mainFrame.append(`
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header"><button class="accordion-button" id="${tokens[1]}-header" onClick="location.href='/details_a.html?where=${tokens[1]}'"  type="button" data-bs-toggle="collapse" data-bs-target="#${tokens[1]}">
+                                ${tokens[0]}
+                            </button>
+                            </h2>
+                            <div class="accordion-body row collapse show" id="${tokens[1]}">
+                                <div class="col-5">
+                                    <div class="float-start">
+                                        <div class="row" style="display:flex;">
+                                            <div style="width:auto;">
+                                                <img id="${tokens[1]}-img-1" src="" class="rounded img-thumbnail" style="max-height:150px;max-width:100%;">
+                                            </div>
+                                            <div style="width:auto;">
+                                                <h5 class="dmj">민주</h5><h2 class="dmj" id="${tokens[1]}-name-1"></h2><h2 class="dmj" id="${tokens[1]}-prob-1">0.0%</h2><h6 class="dmj" style="text-align:left;" id="${tokens[1]}-count-1">0</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2 showdiff" style="padding-top:calc(150px-1rem);"><h6>표차</h6><h6 id="${tokens[1]}-diff">0</h6><h6>당선까지</h6><h6 id="${tokens[1]}-left">0</h6></div>
+                                <div class="col-5">
+                                    <div class="float-end">
+                                        <div class="row" style="display:flex;">
+                                            <div style="width:auto;">
+                                                <h5 class="ppp">국민</h5><h2 class="ppp" id="${tokens[1]}-name-2"></h2><h2 class="ppp" id="${tokens[1]}-prob-2">0.0%</h2><h6 class="ppp" style="text-align:right;" id="${tokens[1]}-count-2">0</h6>
+                                            </div>
+                                            <div style="width:auto;">
+                                                <img id="${tokens[1]}-img-2" src="" class="rounded img-thumbnail" style="max-height:150px;max-width:100%;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="progress col-12" id="${tokens[1]}-progress">
+                                    <div class="progress-bar bg-dmj" role="progressbar" style="width: 50.0%"></div>
+                                    <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.0%"></div>
+                                    <div class="progress-bar bg-ppp" role="progressbar" style="width: 50.0%"></div>
+                                </div>
+                                <div style="height:20px;"></div>
+                                <div class="row div-details">
+                                    <div style="width:200px;"><h4 style="text-align:center;">사전투표</h4><h5 style="text-align:center;" id="${tokens[1]}-probd1"></h5></div>
+                                    <div style="padding:0;width:calc(100% - 200px);">
+                                        <div class="progress progress-small" id="${tokens[1]}-progress-d1">
+                                            <div class="progress-bar bg-dmj" role="progressbar" style="width: 50.0%"></div>
+                                            <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.0%"></div>
+                                            <div class="progress-bar bg-ppp" role="progressbar" style="width: 50.0%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row div-details">
+                                    <div style="width:200px;"><h4 style="text-align:center;">본투표</h4><h5 style="text-align:center;" id="${tokens[1]}-probd2"></h5></div>
+                                    <div style="padding:0;width:calc(100% - 200px);">
+                                        <div class="progress progress-small" id="${tokens[1]}-progress-d2">
+                                            <div class="progress-bar bg-dmj" role="progressbar" style="width: 50.0%"></div>
+                                            <div class="progress-bar bg-secondary" role="progressbar" style="width: 0.0%"></div>
+                                            <div class="progress-bar bg-ppp" role="progressbar" style="width: 50.0%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row div-details">
+                                    <div style="width:200px;"><h4 style="text-align:center;">예측 당선확률</h4><h5 style="text-align:center;" id="${tokens[1]}-pred">0.0:0.0</h5></div>
+                                    <div style="padding:0;width:calc(100% - 200px);">
+                                        <div class="progress progress-small" id="${tokens[1]}-prediction">
+                                            <div class="progress-bar bg-dmj" role="progressbar" style="width: 50.0%"></div>
+                                            <div class="progress-bar bg-secondary" role="progressbar" style="width: 0%"></div>
+                                            <div class="progress-bar bg-ppp" role="progressbar" style="width: 50.0%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 div-details" id="${tokens[1]}-details">
+                                </div>
+                            </div>
+                        </div>
+                    </div>`);
+                    $("#" + tokens[1] + "-img-1").attr("src", tokens[2]);
+                    $("#" + tokens[1] + "-img-2").attr("src", tokens[3]);
+                    $("#" + tokens[1] + "-name-1").text(tokens[4]);
+                    $("#" + tokens[1] + "-name-2").text(tokens[5]);
+                }
+                /*
+                <button type="button" class="btn btn-dmj3 disabled">종로구</button>
+                <button type="button" class="btn btn-dmj2 disabled">종로구</button>
+                <button type="button" class="btn btn-dmj1 disabled">종로구</button>
+                <button type="button" class="btn btn-0 disabled">종로구</button>
+                <button type="button" class="btn btn-ppp1 disabled">성남시분당구</button>
+                <button type="button" class="btn btn-ppp2 disabled">성남시중원구</button>
+                <button type="button" class="btn btn-ppp3 disabled">제주시을</button>
+                */
+                $.get("/details_a/" + target_location + ".txt", (data2) => {
+                    x2 = data2.split('\n');
+                    details = [];
+                    var t_dmj = 0; var t_ppp = 0; var t_all = 0.01;
+                    _tokenn = x2[0].trim().split(' ')[4]
+                    $("#" + target_location + "-header").text($("#" + target_location + "-header").text() + " - 개표율 " + _tokenn + "%");
+                    for(var j=0;j<x2.length;j++){
+                        tokens = x2[j].trim().split(' ');
+                        v_dmj = parseInt(tokens[1]);
+                        v_ppp = parseInt(tokens[2]);
+                        v_all = parseInt(tokens[3]);
+                        t_dmj += v_dmj; t_ppp += v_ppp; t_all += v_all;
+                        console.log(t_dmj, t_all);
+                        break;
+                    }
+                    $("#" + target_location + "-prob-1").text(prettyPercentage(t_dmj / t_all) + "%");
+                    $("#" + target_location + "-prob-2").text(prettyPercentage(t_ppp / t_all) + "%");
+                    $("#" + target_location + "-count-1").text(t_dmj+"");
+                    $("#" + target_location + "-count-2").text(t_ppp+"");
+                    
+                    $("#" + target_location + "-diff").text(Math.abs(t_ppp - t_dmj));
+                    $("#" + target_location + "-left").text(lefts[0]);
+
+                    $("#" + target_location + "-progress .bg-dmj").css('width', prettyPercentage(t_dmj / t_all) + "%");
+                    $("#" + target_location + "-progress .bg-secondary").css('width', prettyPercentage((t_all - t_dmj - t_ppp) / t_all) + "%");
+                    $("#" + target_location + "-progress .bg-ppp").css('width', prettyPercentage(t_ppp / t_all) + "%");
+                    
+                    console.log(probs, lefts)
+                    if(t_dmj > t_ppp){
+                        $("#" + target_location + "-header").addClass('bg-dmj');
+                        if(parseInt(lefts[0]) == 0){
+                            $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-dmj">당선</span>`)
+                        }else if(parseFloat(probs[0]) > 0.99){
+                            $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-dmj">확실</span>`)
+                        }else if(parseFloat(probs[0]) > 0.95){
+                            $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-dmj">유력</span>`)
+                        }else if(parseFloat(probs[0]) > -1e-6 && parseFloat(probs[0]) < 0.01){
+                            $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-ppp">확실</span>`)
+                        }else if(parseFloat(probs[0]) > -1e-6 && parseFloat(probs[0]) < 0.05){
+                            $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-ppp">유력</span>`)
+                        }
+                    }else if(t_dmj < t_ppp){
+                        $("#" + target_location + "-header").addClass('bg-ppp');
+                        if(parseInt(lefts[0]) == 0){
+                            $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-ppp">당선</span>`)
+                        }else if(parseFloat(probs[0]) > 0.99){
+                            $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-dmj">확실</span>`)
+                        }else if(parseFloat(probs[0]) > 0.95){
+                            $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-dmj">유력</span>`)
+                        }else if(parseFloat(probs[0]) > -1e-6 && parseFloat(probs[0]) < 0.01){
+                            $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-ppp">확실</span>`)
+                        }else if(parseFloat(probs[0]) > -1e-6 && parseFloat(probs[0]) < 0.05){
+                            $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-ppp">유력</span>`)
+                        }
+                    }else{
+                        $("#" + target_location + "-header").addClass('bg-none');
+                    }
+                });
+                $.get("/details_a/all.txt", (data3) => {
+                    x = data3.split('\n');
+                    var t1_dmj = 0, t1_ppp = 0, t1_all = 0.001, t2_dmj = 0, t2_ppp = 0, t2_all = 0.001;
+                    for(var j=0;j<x.length;j++){
+                        tokens = x[j].trim().split(' ');
+                        if(tokens[0] == target_location){
+                            //console.log(tokens);
+                            t1_dmj += parseInt(tokens[2]);
+                            t1_ppp += parseInt(tokens[3]);
+                            t1_all += parseInt(tokens[4]);
+                            t2_dmj += parseInt(tokens[6]);
+                            t2_ppp += parseInt(tokens[7]);
+                            t2_all += parseInt(tokens[8]);
+                        }
+                    }
+                    console.log(t1_dmj, t1_ppp, t1_all, t2_dmj, t2_ppp, t2_all);
+                    p1_dmj = prettyPercentage(t1_dmj / t1_all);
+                    p1_ppp = prettyPercentage(t1_ppp / t1_all);
+                    p1_all = prettyPercentage((t1_all - t1_dmj - t1_ppp) / t1_all);
+                    p2_dmj = prettyPercentage(t2_dmj / t2_all);
+                    p2_ppp = prettyPercentage(t2_ppp / t2_all);
+                    p2_all = prettyPercentage((t2_all - t2_dmj - t2_ppp) / t2_all);
+                    
+                    console.log("#" + target_location + "-probd1", p1_dmj + ":" + p1_ppp)
+                    $("#" + target_location + "-probd1").html(`<span class="dmj">${p1_dmj}</span> : <span class="ppp">${p1_ppp}</span>`);
+                    $("#" + target_location + "-probd2").html(`<span class="dmj">${p2_dmj}</span> : <span class="ppp">${p2_ppp}</span>`);
+                    
+                    $("#" + target_location + "-progress-d1 .bg-dmj").css('width', p1_dmj + "%");
+                    $("#" + target_location + "-progress-d1 .bg-secondary").css('width', p1_all + "%");
+                    $("#" + target_location + "-progress-d1 .bg-ppp").css('width', p1_ppp + "%");
+                    $("#" + target_location + "-progress-d2 .bg-dmj").css('width', p2_dmj + "%");
+                    $("#" + target_location + "-progress-d2 .bg-secondary").css('width', p2_all + "%");
+                    $("#" + target_location + "-progress-d2 .bg-ppp").css('width', p2_ppp + "%");
+
+                    fprob = parseFloat(probs[0]);
+                    if(fprob > -1e-6){
+                        $("#" + target_location + "-prediction .bg-dmj").css('width', prettyPercentage(fprob) + "%");
+                        $("#" + target_location + "-prediction .bg-secondary").css('width', "0%");
+                        $("#" + target_location + "-prediction .bg-ppp").css('width', prettyPercentage(1-fprob) + "%");
+                        $("#" + target_location + "-pred").html(`<span class="dmj">${prettyPercentage(fprob)}</span> : <span class="ppp">${prettyPercentage(1-fprob)}</span>`);
+                    }else{
+                        $("#" + target_location + "-pred").html(`예측 없음`);
+                    }
+                    
+                });
+            });
+        
+            });
+        }
+        </script>        
+    </body>
+</html>
