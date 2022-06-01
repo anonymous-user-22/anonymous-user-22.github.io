@@ -236,7 +236,7 @@ gyeongnam 사천 0 0 0 0 0 0 0 0
 gyeongnam 김해 0 0 0 0 0 0 0 0
 gyeongnam 밀양 0 0 0 0 0 0 0 0
 gyeongnam 거제 0 0 0 0 0 0 0 0
-gyeongnam 의령 0 0 0 0 0 0 0 0
+gyeongnam 의령 40 129 185 17 40 129 185 17
 gyeongnam 함안 0 0 0 0 0 0 0 0
 gyeongnam 창녕 0 0 0 0 0 0 0 0
 gyeongnam 양산 0 0 0 0 0 0 0 0
@@ -246,5 +246,5 @@ gyeongnam 함양 0 0 0 0 0 0 0 0
 gyeongnam 산청 55 173 235 7 55 173 235 7
 gyeongnam 거창 0 0 0 0 0 0 0 0
 gyeongnam 합천 0 0 0 0 0 0 0 0
-jeju 제주 0 0 0 0 8230 6934 16076 204
-jeju 서귀포 0 0 0 0 8868 6814 16926 282
+jeju 제주 0 0 0 0 17380 14054 33262 448
+jeju 서귀포 0 0 0 0 13616 10000 25502 426
