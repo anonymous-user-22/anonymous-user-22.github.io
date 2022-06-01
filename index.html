@@ -2,6 +2,7 @@
     <meta charset="utf-8">
     <head>
         <title>Toy Project: ELECTION0601</title>
+        <meta http-equiv="refresh" content="60">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -146,7 +147,7 @@
 <div class="container">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-    <span class="fs-4">재미삼아만들어본_2022지방선거 (현재는 대선 데이터 사용중입니다 ㅠ)</span>
+    <span class="fs-4">재미삼아만들어본_2022지방선거</span>
     </a>
     <ul class="nav nav-pills">
     <li class="nav-item"><a href="/index.html" class="nav-link active" aria-current="page">시도지사선거</a></li>
@@ -198,17 +199,17 @@
                                                 <img id="${tokens[1]}-img-1" src="" class="rounded img-thumbnail" style="max-height:150px;max-width:100%;">
                                             </div>
                                             <div style="width:auto;">
-                                                <h5 class="dmj">민주</h5><h2 class="dmj" id="${tokens[1]}-name-1"></h2><h2 class="dmj" id="${tokens[1]}-prob-1">0.0%</h2><h6 class="dmj" style="text-align:left;" id="${tokens[1]}-count-1">0</h6>
+                                                <h5 class="dmj">민주</h5><h2 class="dmj" id="${tokens[1]}-name-1"></h2><h2 class="dmj" id="${tokens[1]}-prob-1">100.0%</h2><h6 class="dmj" style="text-align:left;" id="${tokens[1]}-count-1">-1</h6>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-2" style="padding-top:calc(150px-1rem);"><h6>표차</h6><h6 id="${tokens[1]}-diff">0</h6></div>
+                                <div class="col-2" style="padding-top:calc(150px-1rem);"><h6>표차</h6><h6 id="${tokens[1]}-diff">-1234567</h6></div>
                                 <div class="col-5">
                                     <div class="float-end">
                                         <div class="row" style="display:flex;">
                                             <div style="width:auto;">
-                                                <h5 class="ppp">국민</h5><h2 class="ppp" id="${tokens[1]}-name-2"></h2><h2 class="ppp" id="${tokens[1]}-prob-2">0.0%</h2><h6 class="ppp" style="text-align:right;" id="${tokens[1]}-count-2">0</h6>
+                                                <h5 class="ppp">국민</h5><h2 class="ppp" id="${tokens[1]}-name-2"></h2><h2 class="ppp" id="${tokens[1]}-prob-2">100.0%</h2><h6 class="ppp" style="text-align:right;" id="${tokens[1]}-count-2">-1</h6>
                                             </div>
                                             <div style="width:auto;">
                                                 <img id="${tokens[1]}-img-2" src="" class="rounded img-thumbnail" style="max-height:150px;max-width:100%;">
@@ -240,93 +241,57 @@
                 <button type="button" class="btn btn-ppp2 disabled">성남시중원구</button>
                 <button type="button" class="btn btn-ppp3 disabled">제주시을</button>
                 */
-                for(var i=0;i<17;i++){
-                    $.get("/details/" + uids[i] + ".txt", (data2) => {
-                        x2 = data2.split('\n');
-                        details = [];
-                        var t_dmj = 0; var t_ppp = 0; var t_all = 0.01;
-                        _tokenn = x2[0].trim().split(' ')[4]
-                        $("#" + uids[i] + "-header").text($("#" + uids[i] + "-header").text() + " - 개표율 " + _tokenn + "%");
-                        probs.push(tokens[7]);
-                        console.log();
-                        for(var j=1;j<x2.length;j++){
-                            if(x2[j].length < 3) continue;
-                            tokens = x2[j].trim().split(' ');
-                            v_dmj = parseInt(tokens[1]);
-                            v_ppp = parseInt(tokens[2]);
-                            v_all = parseInt(tokens[3]);
-                            //console.log(t_dmj, t_all);
-                            t_dmj += v_dmj; t_ppp += v_ppp; t_all += v_all;
-                            p_dmj = v_dmj / v_all; p_ppp = v_ppp / v_all;
-                            details.push([p_ppp - p_dmj, tokens[0]]);
-                        }
-                        //console.log(t_dmj, t_all);
-                        $("#" + uids[i] + "-prob-1").text(prettyPercentage(t_dmj / t_all) + "%");
-                        $("#" + uids[i] + "-prob-2").text(prettyPercentage(t_ppp / t_all) + "%");
-                        $("#" + uids[i] + "-count-1").text(t_dmj+"");
-                        $("#" + uids[i] + "-count-2").text(t_ppp+"");
+                $.get("overall.txt", (data2) => {
+                    x2 = data2.split('\n');
+                    for(var i=0;i<17;i++){
+                        tokens = x2[i].trim().split(' ')
+                        target_location = tokens[0];
+                        $("#" + target_location + "-header").text($("#" + target_location + "-header").text() + " - 개표율 " + tokens[4] + "%");
+                        t_dmj = parseInt(tokens[1]);
+                        t_ppp = parseInt(tokens[2]);
+                        t_all = parseInt(tokens[3]) + 0.1;
+                        
+                        $("#" + target_location + "-prob-1").text(prettyPercentage(t_dmj / t_all) + "%");
+                        $("#" + target_location + "-prob-2").text(prettyPercentage(t_ppp / t_all) + "%");
+                        $("#" + target_location + "-count-1").text(t_dmj+"");
+                        $("#" + target_location + "-count-2").text(t_ppp+"");
 
-                        $("#" + uids[i] + "-diff").text(Math.abs(t_ppp - t_dmj));
-                        $("#" + uids[i] + "-progress .bg-dmj").css('width', prettyPercentage(t_dmj / t_all) + "%");
-                        $("#" + uids[i] + "-progress .bg-secondary").css('width', prettyPercentage((t_all - t_dmj - t_ppp) / t_all) + "%");
-                        $("#" + uids[i] + "-progress .bg-ppp").css('width', prettyPercentage(t_ppp / t_all) + "%");
+                        $("#" + target_location + "-diff").text(Math.abs(t_ppp - t_dmj));
+                        $("#" + target_location + "-progress .bg-dmj").css('width', prettyPercentage(t_dmj / t_all) + "%");
+                        $("#" + target_location + "-progress .bg-secondary").css('width', prettyPercentage((t_all - t_dmj - t_ppp) / t_all) + "%");
+                        $("#" + target_location + "-progress .bg-ppp").css('width', prettyPercentage(t_ppp / t_all) + "%");
                         if(t_dmj > t_ppp){
-                            $("#" + uids[i] + "-header").addClass('bg-dmj');
+                            $("#" + target_location + "-header").addClass('bg-dmj');
                             if(parseInt(lefts[i]) == 0){
-                                $("#" + uids[i] + "-header").html($("#" + uids[i] + "-header").text() + `<span class="badge badge-light-dmj">당선</span>`)
+                                $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-dmj">당선</span>`)
                             }else if(parseFloat(probs[i]) > 0.99){
-                                $("#" + uids[i] + "-header").html($("#" + uids[i] + "-header").text() + `<span class="badge badge-light-dmj">확실</span>`)
+                                $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-dmj">확실</span>`)
                             }else if(parseFloat(probs[i]) > 0.95){
-                                $("#" + uids[i] + "-header").html($("#" + uids[i] + "-header").text() + `<span class="badge badge-light-dmj">유력</span>`)
+                                $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-dmj">유력</span>`)
                             }else if(parseFloat(probs[i]) > -1e-6 && parseFloat(probs[i]) < 0.01){
-                                $("#" + uids[i] + "-header").html($("#" + uids[i] + "-header").text() + `<span class="badge badge-light-ppp">확실</span>`)
+                                $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-ppp">확실</span>`)
                             }else if(parseFloat(probs[i]) > -1e-6 && parseFloat(probs[i]) < 0.05){
-                                $("#" + uids[i] + "-header").html($("#" + uids[i] + "-header").text() + `<span class="badge badge-light-ppp">유력</span>`)
+                                $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-ppp">유력</span>`)
                             }
                         }else if(t_dmj < t_ppp){
-                            $("#" + uids[i] + "-header").addClass('bg-ppp');
+                            $("#" + target_location + "-header").addClass('bg-ppp');
                             if(parseInt(lefts[i]) == 0){
-                                $("#" + uids[i] + "-header").html($("#" + uids[i] + "-header").text() + `<span class="badge badge-light-ppp">당선</span>`)
+                                $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-ppp">당선</span>`)
                             }else if(parseFloat(probs[i]) > -1e-6 && parseFloat(probs[i]) < 0.01){
-                                $("#" + uids[i] + "-header").html($("#" + uids[i] + "-header").text() + `<span class="badge badge-light-ppp">확실</span>`)
+                                $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-ppp">확실</span>`)
                             }else if(parseFloat(probs[i]) > -1e-6 && parseFloat(probs[i]) < 0.05){
-                                $("#" + uids[i] + "-header").html($("#" + uids[i] + "-header").text() + `<span class="badge badge-light-ppp">유력</span>`)
+                                $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-ppp">유력</span>`)
                             }else if(parseFloat(probs[i]) > 0.99){
-                                $("#" + uids[i] + "-header").html($("#" + uids[i] + "-header").text() + `<span class="badge badge-light-dmj">확실</span>`)
+                                $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-dmj">확실</span>`)
                             }else if(parseFloat(probs[i]) > 0.95){
-                                $("#" + uids[i] + "-header").html($("#" + uids[i] + "-header").text() + `<span class="badge badge-light-dmj">유력</span>`)
+                                $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-dmj">유력</span>`)
                             }
                         }else{
-                            $("#" + uids[i] + "-header").addClass('bg-none');
+                            $("#" + target_location + "-header").addClass('bg-none');
                         }
-                        _sign = 1;
-                        if (t_ppp > t_dmj) _sign = -1;
-                        details = details.sort(function(a, b){
-                            if(a[0] < b[0]) return -1 * _sign;
-                            else if(a[0] > b[0]) return 1 * _sign;
-                            else return 0;
-                        });
-                        if(details.length > 1){
-                            for(var j=0;j<details.length;j++){
-                                if (details[j][0] > 0.1){
-                                    $("#" + uids[i] + "-details").append(`<button type="button" class="btn btn-ppp3 disabled">${details[j][1]} ${prettyPercentage(-details[j][0] * _sign)}</button>`)
-                                }else if(details[j][0] > 0.05){
-                                    $("#" + uids[i] + "-details").append(`<button type="button" class="btn btn-ppp2 disabled">${details[j][1]} ${prettyPercentage(-details[j][0] * _sign)}</button>`)
-                                }else if(details[j][0] > 0){
-                                    $("#" + uids[i] + "-details").append(`<button type="button" class="btn btn-ppp1 disabled">${details[j][1]} ${prettyPercentage(-details[j][0] * _sign)}</button>`)
-                                }else if(details[j][0] < -0.1){
-                                    $("#" + uids[i] + "-details").append(`<button type="button" class="btn btn-dmj3 disabled">${details[j][1]} ${prettyPercentage(-details[j][0] * _sign)}</button>`)
-                                }else if(details[j][0] < -0.05){
-                                    $("#" + uids[i] + "-details").append(`<button type="button" class="btn btn-dmj2 disabled">${details[j][1]} ${prettyPercentage(-details[j][0] * _sign)}</button>`)
-                                }else if(details[j][0] < 0){
-                                    $("#" + uids[i] + "-details").append(`<button type="button" class="btn btn-dmj1 disabled">${details[j][1]} ${prettyPercentage(-details[j][0] * _sign)}</button>`)
-                                }else{
-                                    $("#" + uids[i] + "-details").append(`<button type="button" class="btn btn-0 disabled">${details[j][1]} ${prettyPercentage(-details[j][0] * _sign)}</button>`)
-                                }
-                            }
-                        }
-                    });
-                }
+                    }
+                });
+
             });
         
         

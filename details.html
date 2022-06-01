@@ -2,6 +2,7 @@
     <meta charset="utf-8">
     <head>
         <title>Toy Project: ELECTION0601</title>
+        <meta http-equiv="refresh" content="60">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -306,7 +307,7 @@
                         tokens = x2[j].trim().split(' ');
                         v_dmj = parseInt(tokens[1]);
                         v_ppp = parseInt(tokens[2]);
-                        v_all = parseInt(tokens[3]);
+                        v_all = parseInt(tokens[3]) + 0.001;
                         //console.log(t_dmj, t_all);
                         t_dmj += v_dmj; t_ppp += v_ppp; t_all += v_all;
                         p_dmj = v_dmj / v_all; p_ppp = v_ppp / v_all;
