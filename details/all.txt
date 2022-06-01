@@ -214,12 +214,12 @@ gyeongbuk 문경 0 0 0 0 0 0 0 0
 gyeongbuk 예천 0 0 0 0 0 0 0 0
 gyeongbuk 경산 0 0 0 0 0 0 0 0
 gyeongbuk 청도 0 0 0 0 0 0 0 0
-gyeongbuk 고령 50 207 257 12 50 207 257 12
+gyeongbuk 고령 180 905 1085 56 180 905 1085 56
 gyeongbuk 성주 0 0 0 0 0 0 0 0
 gyeongbuk 칠곡 0 0 0 0 0 0 0 0
 gyeongbuk 군위 0 0 0 0 0 0 0 0
 gyeongbuk 의성 0 0 0 0 0 0 0 0
-gyeongbuk 청송 0 0 0 0 0 0 0 0
+gyeongbuk 청송 107 371 478 19 107 371 478 19
 gyeongbuk 영양 0 0 0 0 0 0 0 0
 gyeongbuk 영덕 0 0 0 0 0 0 0 0
 gyeongbuk 봉화 0 0 0 0 0 0 0 0
