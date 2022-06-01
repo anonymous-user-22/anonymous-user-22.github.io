@@ -41,7 +41,7 @@ busan 수영 0 0 0 0 0 0 0 0
 busan 사상 0 0 0 0 0 0 0 0
 daegu 중 0 0 0 0 0 0 0 0
 daegu 동 0 0 0 0 0 0 0 0
-daegu 서 0 0 0 0 0 0 0 0
+daegu 서 24 104 136 5 0 0 0 0
 daegu 남 0 0 0 0 0 0 0 0
 daegu 북 0 0 0 0 0 0 0 0
 daegu 수성 0 0 0 0 0 0 0 0
@@ -55,7 +55,7 @@ incheon 남동 0 0 0 0 0 0 0 0
 incheon 부평 0 0 0 0 0 0 0 0
 incheon 계양 0 0 0 0 0 0 0 0
 incheon 서 0 0 0 0 0 0 0 0
-incheon 강화 0 0 0 0 0 0 0 0
+incheon 강화 0 0 0 0 1914 4912 7166 266
 incheon 옹진 75 142 219 5 75 142 219 5
 gwangju 동 0 0 0 0 0 0 0 0
 gwangju 서 0 0 0 0 0 0 0 0
@@ -66,7 +66,7 @@ daejeon 동 0 0 0 0 0 0 0 0
 daejeon 중 0 0 0 0 0 0 0 0
 daejeon 서 0 0 0 0 0 0 0 0
 daejeon 유성 0 0 0 0 0 0 0 0
-daejeon 대덕 0 0 0 0 0 0 0 0
+daejeon 대덕 0 0 0 0 1260 1400 2660 26
 ulsan 중 0 0 0 0 0 0 0 0
 ulsan 남 0 0 0 0 0 0 0 0
 ulsan 동 0 0 0 0 0 0 0 0
