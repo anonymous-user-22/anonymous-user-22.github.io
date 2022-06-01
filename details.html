@@ -330,26 +330,26 @@
                         $("#" + target_location + "-header").addClass('bg-dmj');
                         if(parseInt(lefts[0]) == 0){
                             $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-dmj">당선</span>`)
-                        }else if(parseFloat(probs[0]) > -1e-6 && parseFloat(probs[0]) < 0.01){
+                        }else if(parseFloat(probs[0]) > -1e-6 && parseFloat(probs[0]) < 0.1){
                             $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-ppp">확실</span>`)
                         }else if(parseFloat(probs[0]) > -1e-6 && parseFloat(probs[0]) < 0.05){
                             $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-ppp">유력</span>`)
                         }else if(parseFloat(probs[0]) > 0.99){
                             $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-dmj">확실</span>`)
-                        }else if(parseFloat(probs[0]) > 0.95){
+                        }else if(parseFloat(probs[0]) > 0.9){
                             $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-dmj">유력</span>`)
                         }
                     }else if(t_dmj < t_ppp){
                         $("#" + target_location + "-header").addClass('bg-ppp');
                         if(parseInt(lefts[0]) == 0){
                             $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-ppp">당선</span>`)
-                        }else if(parseFloat(probs[0]) > -1e-6 && parseFloat(probs[0]) < 0.01){
+                        }else if(parseFloat(probs[0]) > -1e-6 && parseFloat(probs[0]) < 0.1){
                             $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-ppp">확실</span>`)
                         }else if(parseFloat(probs[0]) > -1e-6 && parseFloat(probs[0]) < 0.05){
                             $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-ppp">유력</span>`)
                         }else if(parseFloat(probs[0]) > 0.99){
                             $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-dmj">확실</span>`)
-                        }else if(parseFloat(probs[0]) > 0.95){
+                        }else if(parseFloat(probs[0]) > 0.9){
                             $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-dmj">유력</span>`)
                         }
                     }else{
