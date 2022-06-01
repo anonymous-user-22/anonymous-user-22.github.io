@@ -77,7 +77,7 @@ gyeonggi 수원장안 0 0 0 0 0 0 0 0
 gyeonggi 수원권선 0 0 0 0 0 0 0 0
 gyeonggi 수원팔달 0 0 0 0 0 0 0 0
 gyeonggi 수원영통 0 0 0 0 0 0 0 0
-gyeonggi 성남수정 0 0 0 0 0 0 0 0
+gyeonggi 성남수정 0 0 0 0 108 114 228 2
 gyeonggi 성남중원 0 0 0 0 0 0 0 0
 gyeonggi 성남분당 0 0 0 0 0 0 0 0
 gyeonggi 의정부 0 0 0 0 0 0 0 0
