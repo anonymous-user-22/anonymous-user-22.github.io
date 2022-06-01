@@ -4,4 +4,4 @@ gyeonggi_seongnambundanggap 4982 10015 14997 11.15 227
 gangwon_wonjugap 0 0 0 0.00 0
 chungnam_boryeongseocheon 923 1025 1948 2.59 170
 gyeongnam_changwonuichang 6431 11095 17526 15.99 564
-jeju_jejueul 22370 22816 47781 44.93 700
+jeju_jejueul 22777 23203 48628 45.73 717
