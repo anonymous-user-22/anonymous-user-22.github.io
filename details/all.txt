@@ -119,7 +119,7 @@ gangwon 춘천 0 0 0 0 0 0 0 0
 gangwon 원주 0 0 0 0 0 0 0 0
 gangwon 강릉 0 0 0 0 0 0 0 0
 gangwon 동해 0 0 0 0 0 0 0 0
-gangwon 삼척 61 92 153 2 61 92 153 2
+gangwon 삼척 282 348 630 14 282 348 630 14
 gangwon 태백 0 0 0 0 0 0 0 0
 gangwon 정선 0 0 0 0 0 0 0 0
 gangwon 속초 0 0 0 0 0 0 0 0
