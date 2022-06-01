@@ -179,7 +179,7 @@ jeonbuk 순창 0 0 0 0 0 0 0 0
 jeonbuk 고창 1147 189 1336 141 1147 189 1336 141
 jeonbuk 부안 0 0 0 0 0 0 0 0
 jeonnam 목포 0 0 0 0 0 0 0 0
-jeonnam 여수 0 0 0 0 0 0 0 0
+jeonnam 여수 0 0 0 0 1812 292 2174 60
 jeonnam 순천 0 0 0 0 0 0 0 0
 jeonnam 나주 0 0 0 0 0 0 0 0
 jeonnam 광양 0 0 0 0 0 0 0 0
@@ -189,7 +189,7 @@ jeonnam 곡성 0 0 0 0 0 0 0 0
 jeonnam 구례 0 0 0 0 0 0 0 0
 jeonnam 고흥 0 0 0 0 0 0 0 0
 jeonnam 보성 0 0 0 0 0 0 0 0
-jeonnam 화순 0 0 0 0 0 0 0 0
+jeonnam 화순 188 48 262 35 188 48 262 35
 jeonnam 장흥 0 0 0 0 0 0 0 0
 jeonnam 강진 0 0 0 0 0 0 0 0
 jeonnam 완도 0 0 0 0 0 0 0 0
@@ -197,12 +197,12 @@ jeonnam 해남 0 0 0 0 0 0 0 0
 jeonnam 진도 0 0 0 0 0 0 0 0
 jeonnam 영암 0 0 0 0 0 0 0 0
 jeonnam 무안 0 0 0 0 0 0 0 0
-jeonnam 영광 0 0 0 0 0 0 0 0
+jeonnam 영광 424 73 527 31 424 73 527 31
 jeonnam 함평 0 0 0 0 0 0 0 0
 jeonnam 신안 0 0 0 0 0 0 0 0
 gyeongbuk 포항북 0 0 0 0 0 0 0 0
 gyeongbuk 포항남 0 0 0 0 0 0 0 0
-gyeongbuk 울릉 0 0 0 0 0 0 0 0
+gyeongbuk 울릉 6 47 53 7 0 0 0 0
 gyeongbuk 경주 0 0 0 0 0 0 0 0
 gyeongbuk 김천 0 0 0 0 0 0 0 0
 gyeongbuk 안동 0 0 0 0 0 0 0 0
