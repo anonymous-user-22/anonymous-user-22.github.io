@@ -264,28 +264,28 @@
                         $("#" + target_location + "-progress .bg-ppp").css('width', prettyPercentage(t_ppp / t_all) + "%");
                         if(t_dmj > t_ppp){
                             $("#" + target_location + "-header").addClass('bg-dmj');
-                            if(parseInt(lefts_dict[target_location]) == 0){
+                            if(parseInt(probs_dict[target_location]) == 0){
                                 $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-dmj">당선</span>`)
-                            }else if(parseFloat(lefts_dict[target_location]) > 0.99){
+                            }else if(parseFloat(probs_dict[target_location]) > 0.99){
                                 $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-dmj">확실</span>`)
-                            }else if(parseFloat(lefts_dict[target_location]) > 0.95){
+                            }else if(parseFloat(probs_dict[target_location]) > 0.95){
                                 $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-dmj">유력</span>`)
-                            }else if(parseFloat(lefts_dict[target_location]) > -1e-6 && parseFloat(lefts_dict[target_location]) < 0.01){
+                            }else if(parseFloat(probs_dict[target_location]) > -1e-6 && parseFloat(probs_dict[target_location]) < 0.01){
                                 $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-ppp">확실</span>`)
-                            }else if(parseFloat(lefts_dict[target_location]) > -1e-6 && parseFloat(lefts_dict[target_location]) < 0.05){
+                            }else if(parseFloat(probs_dict[target_location]) > -1e-6 && parseFloat(probs_dict[target_location]) < 0.05){
                                 $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-ppp">유력</span>`)
                             }
                         }else if(t_dmj < t_ppp){
                             $("#" + target_location + "-header").addClass('bg-ppp');
-                            if(parseInt(lefts_dict[target_location]) == 0){
+                            if(parseInt(probs_dict[target_location]) == 0){
                                 $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-ppp">당선</span>`)
-                            }else if(parseFloat(lefts_dict[target_location]) > 0.99){
+                            }else if(parseFloat(probs_dict[target_location]) > 0.99){
                                 $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-dmj">확실</span>`)
-                            }else if(parseFloat(lefts_dict[target_location]) > 0.95){
+                            }else if(parseFloat(probs_dict[target_location]) > 0.95){
                                 $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-dmj">유력</span>`)
-                            }else if(parseFloat(lefts_dict[target_location]) > -1e-6 && parseFloat(lefts_dict[target_location]) < 0.01){
+                            }else if(parseFloat(probs_dict[target_location]) > -1e-6 && parseFloat(probs_dict[target_location]) < 0.01){
                                 $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-ppp">확실</span>`)
-                            }else if(parseFloat(lefts_dict[target_location]) > -1e-6 && parseFloat(lefts_dict[target_location]) < 0.05){
+                            }else if(parseFloat(probs_dict[target_location]) > -1e-6 && parseFloat(probs_dict[target_location]) < 0.05){
                                 $("#" + target_location + "-header").html($("#" + target_location + "-header").text() + `<span class="badge badge-light-ppp">유력</span>`)
                             }
                         }else{
