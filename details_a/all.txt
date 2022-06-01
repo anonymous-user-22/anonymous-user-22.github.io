@@ -4,6 +4,6 @@ gyeonggi_seongnambundanggap 성남분당 0 0 0 0 0 0 0 0
 gangwon_wonjugap 원주 0 0 0 0 0 0 0 0
 chungnam_boryeongseocheon 보령 0 0 0 0 0 0 0 0
 chungnam_boryeongseocheon 서천 0 0 0 0 0 0 0 0
-gyeongnam_changwonuichang 창원의창 0 0 0 0 0 0 0 0
+gyeongnam_changwonuichang 창원의창 0 0 0 0 1432 2362 3794 56
 gyeongnam_changwonuichang 창원성산 0 0 0 0 0 0 0 0
-jeju_jejueul 제주 0 0 0 0 11222 11320 23562 326
+jeju_jejueul 제주 0 0 0 0 17142 17260 36066 518
