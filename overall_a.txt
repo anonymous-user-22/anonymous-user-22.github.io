@@ -4,4 +4,4 @@ gyeonggi_seongnambundanggap 0 0 0 0.00 0
 gangwon_wonjugap 0 0 0 0.00 0
 chungnam_boryeongseocheon 0 0 0 0.00 0
 gyeongnam_changwonuichang 0 0 0 0.00 0
-jeju_jejueul 6915 6901 14474 13.60 204
+jeju_jejueul 7776 7603 16120 15.14 221
