@@ -4,8 +4,8 @@
 강원 gangwon http://cdn.nec.go.kr/photo_20220601/Gsg4200/Hb100147275/gicho/thumbnail.100147275.JPG http://cdn.nec.go.kr/photo_20220601/Gsg4200/Hb100141401/gicho/thumbnail.100141401.JPG 이광재 김진태 342924 0.22044428267168487
 대전 daejeon http://cdn.nec.go.kr/photo_20220601/Gsg3000/Hb100147533/gicho/thumbnail.100147533.JPG http://cdn.nec.go.kr/photo_20220601/Gsg3000/Hb100139063/gicho/thumbnail.100139063.JPG 허태정 이장우 286926 0.3813059902843632
 세종 sejong http://cdn.nec.go.kr/photo_20220601/Gsg5100/Hb100147332/gicho/thumbnail.100147332.JPEG http://cdn.nec.go.kr/photo_20220601/Gsg5100/Hb100141365/gicho/thumbnail.100141365.JPG 이춘희 최민호 67893 0.42712880060869163
-충남 chungnam http://cdn.nec.go.kr/photo_20220601/Gsg4400/Hb100147372/gicho/thumbnail.100147372.JPG http://cdn.nec.go.kr/photo_20220601/Gsg4400/Hb100147152/gicho/thumbnail.100147152.JPG 양승조 김태흠 414208 0.23472979084492246
-충북 chungbuk http://cdn.nec.go.kr/photo_20220601/Gsg4300/Hb100143209/gicho/thumbnail.100143209.JPG http://cdn.nec.go.kr/photo_20220601/Gsg4300/Hb100143970/gicho/thumbnail.100143970.JPEG 노영민 김영환 280935 0.008682497092646957
+충남 chungnam http://cdn.nec.go.kr/photo_20220601/Gsg4400/Hb100147372/gicho/thumbnail.100147372.JPG http://cdn.nec.go.kr/photo_20220601/Gsg4400/Hb100147152/gicho/thumbnail.100147152.JPG 양승조 김태흠 397245 0.2571996302002417
+충북 chungbuk http://cdn.nec.go.kr/photo_20220601/Gsg4300/Hb100143209/gicho/thumbnail.100143209.JPG http://cdn.nec.go.kr/photo_20220601/Gsg4300/Hb100143970/gicho/thumbnail.100143970.JPEG 노영민 김영환 277726 0.011631948285376559
 부산 busan http://cdn.nec.go.kr/photo_20220601/Gsg2600/Hb100146196/gicho/thumbnail.100146196.JPG http://cdn.nec.go.kr/photo_20220601/Gsg2600/Hb100149514/gicho/thumbnail.100149514.JPG 변성완 박형준 601864 0.03629708445322938
 울산 ulsan http://cdn.nec.go.kr/photo_20220601/Gsg3100/Hb100147672/gicho/thumbnail.100147672.JPG http://cdn.nec.go.kr/photo_20220601/Gsg3100/Hb100139025/gicho/thumbnail.100139025.JPG 송철호 김두겸 232992 0.09203312459635943
 경남 gyeongnam http://cdn.nec.go.kr/photo_20220601/Gsg4800/Hb100147674/gicho/thumbnail.100147674.JPG http://cdn.nec.go.kr/photo_20220601/Gsg4800/Hb100147641/gicho/thumbnail.100147641.JPG 양문석 박완수 629663 0.0022592750138176187
@@ -13,5 +13,5 @@
 경북 gyeongbuk http://cdn.nec.go.kr/photo_20220601/Gsg4700/Hb100148147/gicho/thumbnail.100148147.JPG http://cdn.nec.go.kr/photo_20220601/Gsg4700/Hb100150424/gicho/thumbnail.100150424.JPG 임미애 이철우 483277 0.0008041183224071213
 광주 gwangju http://cdn.nec.go.kr/photo_20220601/Gsg2900/Hb100140244/gicho/thumbnail.100140244.JPG http://cdn.nec.go.kr/photo_20220601/Gsg2900/Hb100145998/gicho/thumbnail.100145998.JPG 강기정 주기환 189181 0.9988218416284064
 전남 jeonnam http://cdn.nec.go.kr/photo_20220601/Gsg4600/Hb100147373/gicho/thumbnail.100147373.JPG http://cdn.nec.go.kr/photo_20220601/Gsg4600/Hb100145981/gicho/thumbnail.100145981.JPG 김영록 이정현 329370 0.999996458357543
-전북 jeonbuk http://cdn.nec.go.kr/photo_20220601/Gsg4500/Hb100141512/gicho/thumbnail.100141512.JPG http://cdn.nec.go.kr/photo_20220601/Gsg4500/Hb100147010/gicho/thumbnail.100147010.JPG 김관영 조배숙 260432 0.9999999542953238
+전북 jeonbuk http://cdn.nec.go.kr/photo_20220601/Gsg4500/Hb100141512/gicho/thumbnail.100141512.JPG http://cdn.nec.go.kr/photo_20220601/Gsg4500/Hb100147010/gicho/thumbnail.100147010.JPG 김관영 조배숙 248465 0.9999999898328158
 제주 jeju http://cdn.nec.go.kr/photo_20220601/Gsg4900/Hb100147644/gicho/thumbnail.100147644.JPG http://cdn.nec.go.kr/photo_20220601/Gsg4900/Hb100143513/gicho/thumbnail.100143513.JPG 오영훈 허향진 93497 0.7411152083282428
