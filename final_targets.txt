@@ -10,8 +10,8 @@
 울산 ulsan http://cdn.nec.go.kr/photo_20220601/Gsg3100/Hb100147672/gicho/thumbnail.100147672.JPG http://cdn.nec.go.kr/photo_20220601/Gsg3100/Hb100139025/gicho/thumbnail.100139025.JPG 송철호 김두겸 215895 0.1213157255601181
 경남 gyeongnam http://cdn.nec.go.kr/photo_20220601/Gsg4800/Hb100147674/gicho/thumbnail.100147674.JPG http://cdn.nec.go.kr/photo_20220601/Gsg4800/Hb100147641/gicho/thumbnail.100147641.JPG 양문석 박완수 581487 0.0012592715842947855
 대구 daegu http://cdn.nec.go.kr/photo_20220601/Gsg2700/Hb100143589/gicho/thumbnail.100143589.JPG http://cdn.nec.go.kr/photo_20220601/Gsg2700/Hb100147274/gicho/thumbnail.100147274.JPG 서재헌 홍준표 326650 0.02507727821965161
-경북 gyeongbuk http://cdn.nec.go.kr/photo_20220601/Gsg4700/Hb100148147/gicho/thumbnail.100148147.JPG http://cdn.nec.go.kr/photo_20220601/Gsg4700/Hb100150424/gicho/thumbnail.100150424.JPG 임미애 이철우 430032 0.00018492152623256208
+경북 gyeongbuk http://cdn.nec.go.kr/photo_20220601/Gsg4700/Hb100148147/gicho/thumbnail.100148147.JPG http://cdn.nec.go.kr/photo_20220601/Gsg4700/Hb100150424/gicho/thumbnail.100150424.JPG 임미애 이철우 412695 0.00020889579721017348
 광주 gwangju http://cdn.nec.go.kr/photo_20220601/Gsg2900/Hb100140244/gicho/thumbnail.100140244.JPG http://cdn.nec.go.kr/photo_20220601/Gsg2900/Hb100145998/gicho/thumbnail.100145998.JPG 강기정 주기환 168558 0.9999372151448404
-전남 jeonnam http://cdn.nec.go.kr/photo_20220601/Gsg4600/Hb100147373/gicho/thumbnail.100147373.JPG http://cdn.nec.go.kr/photo_20220601/Gsg4600/Hb100145981/gicho/thumbnail.100145981.JPG 김영록 이정현 270309 0.9999999999985891
+전남 jeonnam http://cdn.nec.go.kr/photo_20220601/Gsg4600/Hb100147373/gicho/thumbnail.100147373.JPG http://cdn.nec.go.kr/photo_20220601/Gsg4600/Hb100145981/gicho/thumbnail.100145981.JPG 김영록 이정현 252533 0.9999999999986864
 전북 jeonbuk http://cdn.nec.go.kr/photo_20220601/Gsg4500/Hb100141512/gicho/thumbnail.100141512.JPG http://cdn.nec.go.kr/photo_20220601/Gsg4500/Hb100147010/gicho/thumbnail.100147010.JPG 김관영 조배숙 206379 0.9999999999999847
 제주 jeju http://cdn.nec.go.kr/photo_20220601/Gsg4900/Hb100147644/gicho/thumbnail.100147644.JPG http://cdn.nec.go.kr/photo_20220601/Gsg4900/Hb100143513/gicho/thumbnail.100143513.JPG 오영훈 허향진 74873 1.0
