@@ -74,7 +74,7 @@ ulsan 북 0 0 0 0 0 0 0 0
 ulsan 울주 0 0 0 0 0 0 0 0
 sejong 세종 0 0 0 0 0 0 0 0
 gyeonggi 수원장안 0 0 0 0 0 0 0 0
-gyeonggi 수원권선 0 0 0 0 0 0 0 0
+gyeonggi 수원권선 0 0 0 0 750 804 1594 12
 gyeonggi 수원팔달 0 0 0 0 0 0 0 0
 gyeonggi 수원영통 0 0 0 0 0 0 0 0
 gyeonggi 성남수정 0 0 0 0 108 114 228 2
