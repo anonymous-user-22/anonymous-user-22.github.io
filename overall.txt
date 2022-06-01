@@ -12,6 +12,6 @@ chungbuk 0 0 0 0.00 0
 chungnam 0 0 0 0.00 0
 jeonbuk 458 79 537 0.08 27
 jeonnam 0 0 0 0.00 0
-gyeongbuk 56 254 310 0.03 19
+gyeongbuk 124 551 675 0.06 38
 gyeongnam 0 0 0 0.00 0
-jeju 1910 1689 3827 1.30 70
+jeju 3112 2639 6186 2.10 119
