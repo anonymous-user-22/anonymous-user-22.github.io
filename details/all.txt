@@ -176,7 +176,7 @@ jeonbuk 무주 0 0 0 0 0 0 0 0
 jeonbuk 장수 0 0 0 0 0 0 0 0
 jeonbuk 임실 0 0 0 0 0 0 0 0
 jeonbuk 순창 0 0 0 0 0 0 0 0
-jeonbuk 고창 0 0 0 0 0 0 0 0
+jeonbuk 고창 1147 189 1336 141 1147 189 1336 141
 jeonbuk 부안 0 0 0 0 0 0 0 0
 jeonnam 목포 0 0 0 0 0 0 0 0
 jeonnam 여수 0 0 0 0 0 0 0 0
