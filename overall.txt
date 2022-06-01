@@ -1,7 +1,7 @@
 seoul 0 0 0 0.00 0
 busan 0 0 0 0.00 0
 daegu 0 0 0 0.00 0
-incheon 0 0 0 0.00 0
+incheon 75 142 219 0.02 5
 gwangju 0 0 0 0.00 0
 daejeon 0 0 0 0.00 0
 ulsan 0 0 0 0.00 0
