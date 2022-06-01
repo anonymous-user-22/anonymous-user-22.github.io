@@ -141,12 +141,12 @@ chungbuk 충주 84 235 319 3 84 235 319 3
 chungbuk 제천 0 0 0 0 0 0 0 0
 chungbuk 단양 0 0 0 0 0 0 0 0
 chungbuk 영동 0 0 0 0 0 0 0 0
-chungbuk 보은 0 0 0 0 0 0 0 0
+chungbuk 보은 136 290 426 36 136 290 426 36
 chungbuk 옥천 0 0 0 0 0 0 0 0
 chungbuk 음성 0 0 0 0 0 0 0 0
-chungbuk 진천 0 0 0 0 0 0 0 0
-chungbuk 괴산 0 0 0 0 0 0 0 0
-chungbuk 증평 0 0 0 0 0 0 0 0
+chungbuk 진천 155 375 530 11 155 375 530 11
+chungbuk 괴산 300 672 972 72 300 672 972 72
+chungbuk 증평 17 21 38 5 0 0 0 0
 chungnam 천안서북 0 0 0 0 0 0 0 0
 chungnam 천안동남 0 0 0 0 0 0 0 0
 chungnam 공주 0 0 0 0 0 0 0 0
@@ -164,7 +164,7 @@ chungnam 홍성 0 0 0 0 0 0 0 0
 chungnam 청양 0 0 0 0 0 0 0 0
 chungnam 예산 0 0 0 0 0 0 0 0
 jeonbuk 전주완산 0 0 0 0 0 0 0 0
-jeonbuk 전주덕진 0 0 0 0 0 0 0 0
+jeonbuk 전주덕진 0 0 0 0 546 110 656 26
 jeonbuk 군산 0 0 0 0 0 0 0 0
 jeonbuk 익산 0 0 0 0 0 0 0 0
 jeonbuk 정읍 0 0 0 0 0 0 0 0
