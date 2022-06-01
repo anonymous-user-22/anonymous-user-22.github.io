@@ -1,9 +1,9 @@
-daegu_suseongeul 수성 1806 6622 8428 785 0 0 0 0
-incheon_gyeyangeul 계양 14259 10317 24576 808 2613 2570 5183 95
+daegu_suseongeul 수성 2193 7940 10133 902 0 0 0 0
+incheon_gyeyangeul 계양 14347 10383 24730 825 5539 5276 10815 230
 gyeonggi_seongnambundanggap 성남분당 0 0 0 0 29150 52298 81448 1322
 gangwon_wonjugap 원주 1287 2336 3623 179 0 0 0 0
 chungnam_boryeongseocheon 보령 6700 8498 15198 1030 0 0 0 0
-chungnam_boryeongseocheon 서천 5421 4064 9485 623 204 136 340 39
-gyeongnam_changwonuichang 창원의창 4619 7180 11799 532 11106 20419 31525 1019
+chungnam_boryeongseocheon 서천 5421 4064 9485 623 386 324 710 61
+gyeongnam_changwonuichang 창원의창 5551 8471 14022 595 11724 21486 33210 1115
 gyeongnam_changwonuichang 창원성산 0 0 0 0 0 0 0 0
 jeju_jejueul 제주 3010 2138 5425 101 30051 29545 63059 945
