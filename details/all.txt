@@ -105,11 +105,11 @@ gyeonggi 하남 0 0 0 0 0 0 0 0
 gyeonggi 파주 0 0 0 0 0 0 0 0
 gyeonggi 여주 0 0 0 0 0 0 0 0
 gyeonggi 이천 0 0 0 0 0 0 0 0
-gyeonggi 용인처인 0 0 0 0 0 0 0 0
+gyeonggi 용인처인 0 0 0 0 604 794 1438 16
 gyeonggi 용인수지 0 0 0 0 0 0 0 0
 gyeonggi 용인기흥 0 0 0 0 0 0 0 0
 gyeonggi 안성 0 0 0 0 0 0 0 0
-gyeonggi 김포 0 0 0 0 0 0 0 0
+gyeonggi 김포 0 0 0 0 64 162 232 0
 gyeonggi 광주 0 0 0 0 0 0 0 0
 gyeonggi 포천 0 0 0 0 0 0 0 0
 gyeonggi 연천 0 0 0 0 0 0 0 0

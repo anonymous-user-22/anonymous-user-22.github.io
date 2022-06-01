@@ -6,12 +6,12 @@ gwangju 0 0 0 0.00 0
 daejeon 0 0 0 0.00 0
 ulsan 0 0 0 0.00 0
 sejong 0 0 0 0.00 0
-gyeonggi 86 138 230 0.00 1
+gyeonggi 388 535 949 0.02 9
 gangwon 282 348 630 0.08 14
 chungbuk 0 0 0 0.00 0
 chungnam 0 0 0 0.00 0
 jeonbuk 458 79 537 0.08 27
 jeonnam 0 0 0 0.00 0
-gyeongbuk 124 551 675 0.06 38
-gyeongnam 0 0 0 0.00 0
-jeju 3992 3320 7857 2.66 136
+gyeongbuk 186 952 1138 0.10 63
+gyeongnam 55 173 235 0.02 7
+jeju 4215 3506 8301 2.81 143
