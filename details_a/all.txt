@@ -6,4 +6,4 @@ chungnam_boryeongseocheon 보령 953 1294 2247 145 0 0 0 0
 chungnam_boryeongseocheon 서천 1190 962 2152 206 0 0 0 0
 gyeongnam_changwonuichang 창원의창 2828 4297 7125 279 8187 14813 23000 782
 gyeongnam_changwonuichang 창원성산 0 0 0 0 0 0 0 0
-jeju_jejueul 제주 0 0 0 0 26688 26568 56300 841
+jeju_jejueul 제주 158 159 398 36 27848 27403 58398 866
