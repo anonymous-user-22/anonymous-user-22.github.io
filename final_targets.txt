@@ -1,4 +1,4 @@
-서울 seoul http://cdn.nec.go.kr/photo_20220601/Gsg1100/Hb100147796/gicho/thumbnail.100147796.JPG http://cdn.nec.go.kr/photo_20220601/Gsg1100/Hb100149260/gicho/thumbnail.100149260.JPG 송영길 오세훈 662139 0.0
+서울 seoul http://cdn.nec.go.kr/photo_20220601/Gsg1100/Hb100147796/gicho/thumbnail.100147796.JPG http://cdn.nec.go.kr/photo_20220601/Gsg1100/Hb100149260/gicho/thumbnail.100149260.JPG 송영길 오세훈 595569 0.0
 경기 gyeonggi http://cdn.nec.go.kr/photo_20220601/Gsg4100/Hb100145752/gicho/thumbnail.100145752.JPG http://cdn.nec.go.kr/photo_20220601/Gsg4100/Hb100147832/gicho/thumbnail.100147832.JPG 김동연 김은혜 875369 0.27976062705903637
 인천 incheon http://cdn.nec.go.kr/photo_20220601/Gsg2800/Hb100147116/gicho/thumbnail.100147116.JPG http://cdn.nec.go.kr/photo_20220601/Gsg2800/Hb100139645/gicho/thumbnail.100139645.JPG 박남춘 유정복 88432 0.0
 강원 gangwon http://cdn.nec.go.kr/photo_20220601/Gsg4200/Hb100147275/gicho/thumbnail.100147275.JPG http://cdn.nec.go.kr/photo_20220601/Gsg4200/Hb100141401/gicho/thumbnail.100141401.JPG 이광재 김진태 79709 0.0
