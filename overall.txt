@@ -14,4 +14,4 @@ jeonbuk 0 0 0 0.00 0
 jeonnam 0 0 0 0.00 0
 gyeongbuk 50 207 257 0.02 12
 gyeongnam 0 0 0 0.00 0
-jeju 714 675 1486 0.51 33
+jeju 1699 1524 3427 1.16 63

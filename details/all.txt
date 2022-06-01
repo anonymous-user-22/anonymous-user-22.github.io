@@ -214,7 +214,7 @@ gyeongbuk 문경 0 0 0 0 0 0 0 0
 gyeongbuk 예천 0 0 0 0 0 0 0 0
 gyeongbuk 경산 0 0 0 0 0 0 0 0
 gyeongbuk 청도 0 0 0 0 0 0 0 0
-gyeongbuk 고령 0 0 0 0 0 0 0 0
+gyeongbuk 고령 50 207 257 12 50 207 257 12
 gyeongbuk 성주 0 0 0 0 0 0 0 0
 gyeongbuk 칠곡 0 0 0 0 0 0 0 0
 gyeongbuk 군위 0 0 0 0 0 0 0 0
