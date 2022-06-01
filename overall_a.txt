@@ -1,7 +1,7 @@
 daegu_suseongeul 0 0 0 0.00 0
 incheon_gyeyangeul 0 0 0 0.00 0
-gyeonggi_seongnambundanggap 9061 16937 25998 19.31 364
+gyeonggi_seongnambundanggap 9415 17891 27306 20.29 399
 gangwon_wonjugap 0 0 0 0.00 0
 chungnam_boryeongseocheon 1328 1593 2921 3.85 226
-gyeongnam_changwonuichang 6930 12122 19052 17.39 614
+gyeongnam_changwonuichang 7362 12898 20260 18.47 627
 jeju_jejueul 24547 24860 52246 49.13 775
