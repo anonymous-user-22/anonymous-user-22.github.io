@@ -1,7 +1,7 @@
 대구_수성을 daegu_suseongeul http://cdn.nec.go.kr/photo_20220601/Gsg2706/Hb100149874/gicho/thumbnail.100149874.JPG http://cdn.nec.go.kr/photo_20220601/Gsg2706/Hb100150313/gicho/thumbnail.100150313.JPG 김용락 이인선 0 0.0
 인천_계양을 incheon_gyeyangeul http://cdn.nec.go.kr/photo_20220601/Gsg2807/Hb100150092/gicho/thumbnail.100150092.JPG http://cdn.nec.go.kr/photo_20220601/Gsg2807/Hb100148344/gicho/thumbnail.100148344.JPG 이재명 윤형선 0 1.0
 경기_성남분당갑 gyeonggi_seongnambundanggap http://cdn.nec.go.kr/photo_20220601/Gsg4107/Hb100148724/gicho/thumbnail.100148724.JPG http://cdn.nec.go.kr/photo_20220601/Gsg4107/Hb100148608/gicho/thumbnail.100148608.JPG 김병관 안철수 0 0.0
-강원_원주갑 gangwon_wonjugap http://cdn.nec.go.kr/photo_20220601/Gsg4202/Hb100148313/gicho/thumbnail.100148313.JPG http://cdn.nec.go.kr/photo_20220601/Gsg4202/Hb100148229/gicho/thumbnail.100148229.JPG 원창묵 박정하 10330 0.0
+강원_원주갑 gangwon_wonjugap http://cdn.nec.go.kr/photo_20220601/Gsg4202/Hb100148313/gicho/thumbnail.100148313.JPG http://cdn.nec.go.kr/photo_20220601/Gsg4202/Hb100148229/gicho/thumbnail.100148229.JPG 원창묵 박정하 9852 0.0
 충남_보령서천 chungnam_boryeongseocheon http://cdn.nec.go.kr/photo_20220601/Gsg4403/Hb100148332/gicho/thumbnail.100148332.JPG http://cdn.nec.go.kr/photo_20220601/Gsg4403/Hb100148212/gicho/thumbnail.100148212.JPG 나소열 장동혁 0 0.0
 경남_창원의창 gyeongnam_changwonuichang http://cdn.nec.go.kr/photo_20220601/Gsg4821/Hb100148286/gicho/thumbnail.100148286.JPG http://cdn.nec.go.kr/photo_20220601/Gsg4821/Hb100148253/gicho/thumbnail.100148253.JPG 김지수 김영선 0 0.0
 제주_제주을 jeju_jejueul http://cdn.nec.go.kr/photo_20220601/Gsg4901/Hb100148366/gicho/thumbnail.100148366.JPEG http://cdn.nec.go.kr/photo_20220601/Gsg4901/Hb100148376/gicho/thumbnail.100148376.JPG 김한규 부상일 968 1.0
