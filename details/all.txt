@@ -246,5 +246,5 @@ gyeongnam 함양 0 0 0 0 0 0 0 0
 gyeongnam 산청 0 0 0 0 0 0 0 0
 gyeongnam 거창 0 0 0 0 0 0 0 0
 gyeongnam 합천 0 0 0 0 0 0 0 0
-jeju 제주 0 0 0 0 0 0 0 0
-jeju 서귀포 0 0 0 0 0 0 0 0
+jeju 제주 0 0 0 0 2562 2338 5156 90
+jeju 서귀포 0 0 0 0 836 710 1698 36
